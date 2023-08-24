@@ -1,0 +1,101 @@
+01 - insp3ct0r
+
+first inpect or view the page source the you'll find the first part of the flag.
+then the other parts are on CSS and .js file.
+
+ picoCTF{tru3_d3 t3ct1ve_0r_ju5t _lucky?832b0699}
+
+02- wherer are the Robots
+
+you neeed to go to the robots.txt 
+
+https://jupiter.challenges.picoctf.org/problem/36474/robots.txt
+/477ce.html
+
+picoCTF{ca1cu1at1ng_Mach1n3s_477ce}
+
+03 - Dont use Clientside
+
+flag is on the page source you need to replace it to proper order.
+
+picoCTF{no_clients_plz_1a3c89}
+
+04 - Client Side Again
+
+Password is hidden in the java script tag ypu need to find it snd arrange it to an order.
+
+picoCTF{not_this_again_337115}
+
+05 - Flag shop
+integer overflow in the calculation of total_cost. An integer in C typically has a range of values it can represent. For a 32-bit integer, the range is from -2,147,483,648 to 2,147,483,647.
+2,147,483,647/900 = 2386092
+
+total_cost = 900 * number_flags;
+account_balance = account_balance - total_cost;
+
+If number_flags is a large positive value (like 2386396), the multiplication 900 * 2386396 will result in a value that exceeds the maximum positive value that a 32-bit integer can hold. This will cause an integer overflow, and the value of total_cost will wrap around and become a negative value due to the way two's complement representation works. Then we can get the flag.
+
+To fix this issue, you can use a larger data type, such as long long, which can hold larger .
+
+picoCTF{m0n3y_bag5_9c5fac9b}
+
+
+
+06 - obedient Cat
+when you doenload the file they give it contains the flag. (all about the cat command)
+picoCTF{s4n1ty_v3r1f13d_2fd6ed29}
+
+
+07 - GO AHEAD
+
+In this challenge we need to change the https request 
+there are many req methods such as GET, POST, HEAD
+
+HEAD - Purpose: Similar to GET, but only retrieves the headers of the response, not the actual data.
+USING BURPSUITE change the req and forward it the you'll get the flag.
+
+picoCTF{r3j3ct_th3_du4l1ty_8f878508}
+
+08 - crackme.py
+
+wget https://mercury.picoctf.net/static/b7cabaae6561256c50728d3515db3058/crackme.py 
+
+download the file and 
+
+vim or nano crackme.py
+
+comment the part in the code that gives us the largest number we need to get the flag there for change the code
+
+bezos_cc_secret = "A:4@r%uL`M-^M0c0AbcM-MFE07b34c`_6N" this is the ecooded secrect we'll print it out.
+
+#choose_greatest()
+decode_secret(bezos_cc_secret)
+
+python crackme.py
+
+picoCTF{1|\/|_4_p34|\|ut_f3bc410e}
+
+
+
+
+09 - Lets Warm Up
+
+Decimal Number	ASCII Character	Hex Value
+112	p	0x70
+113	q	0x71
+114	r	0x72
+115	s	0x73
+
+then the answer is picoCTF{p}
+
+
+10 - Who are you
+
+in this challenge we need to change request headers 
+i used a extension called "Mod header"
+then i changed header requests according to the challenge and got the password.
+
+picoCTF{http_h34d3rs_v3ry_c0Ol_much_w0w_8d5d8d77}
+
+
+
